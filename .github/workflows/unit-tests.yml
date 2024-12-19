@@ -44,21 +44,21 @@ jobs:
             # above block is to ensure compatible with Ubuntu 20.04 vagrant package
             # although it uses 2.2.10 it is the earliest version that will install on
             # ruby 2.7 without patching
-          - ruby: 3.1
-            vagrant:
+          - ruby: 3.3.6
+            vagrant: v2.4.2
             allow_fail: false
 
     steps:
     - uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - name: Clone ruby-libvirt for ruby 3.1 support
-      if: ${{ startsWith(matrix.ruby, '3.1') }}
+    - name: Clone ruby-libvirt for ruby > 3.1 support
+      if: ${{ startsWith(matrix.ruby, '3.3.6') }}
       uses: actions/checkout@v3
       with:
         repository: libvirt/libvirt-ruby
         path: .deps/libvirt-ruby
-        ref: 43444be184e4d877c5ce110ee5475c952d7590f7
+        ref: master
     - name: Set up libvirt
       run: |
         sudo apt-get update
@@ -67,7 +67,7 @@ jobs:
       run: |
         git config --global url."https://github.com/".insteadOf git://github.com/
     - name: Handle additional ruby 3.1 setup
-      if: ${{ startsWith(matrix.ruby, '3.1') }}
+      if: ${{ startsWith(matrix.ruby, '3.3.6') }}
       run: |
         # build gem of latest bindings that contain fix for ruby include path
         pushd .deps/libvirt-ruby
@@ -95,12 +95,12 @@ jobs:
       env:
         BUNDLE_WITHOUT: 'development'
         VAGRANT_VERSION: ${{ matrix.vagrant }}
-    - name: Coveralls Parallel
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.github_token }}
-        parallel: true
-        path-to-lcov: ./coverage/lcov.info
+#    - name: Coveralls Parallel
+#      uses: coverallsapp/github-action@master
+#      with:
+#        github-token: ${{ secrets.github_token }}
+#        parallel: true
+#        path-to-lcov: ./coverage/lcov.info
 
   finish:
     needs: [test]
@@ -116,9 +116,9 @@ jobs:
              contains(needs.*.result, 'failure')
           || contains(needs.*.result, 'cancelled')
         }}
-    - name: Coveralls Finished
-      uses: coverallsapp/github-action@master
-      if: contains(needs.*.result, 'skipped') == false
-      with:
-        github-token: ${{ secrets.github_token }}
-        parallel-finished: true
+#    - name: Coveralls Finished
+#      uses: coverallsapp/github-action@master
+#      if: contains(needs.*.result, 'skipped') == false
+#      with:
+#        github-token: ${{ secrets.github_token }}
+#        parallel-finished: true
