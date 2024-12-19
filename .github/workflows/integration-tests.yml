@@ -7,6 +7,9 @@ on:
   pull_request:
     paths-ignore:
       - 'docs/**'
+      - '.gitignore'
+      - 'README.md'
+      - 'LICENSE'
       - '.github/workflows/publish-documentation*'
       - '.github/workflows/deploy-docs*'
 
