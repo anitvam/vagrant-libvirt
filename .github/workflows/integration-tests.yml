@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
     paths-ignore:
       - 'docs/**'
       - '.gitignore'
@@ -12,6 +11,7 @@ on:
       - 'LICENSE'
       - '.github/workflows/publish-documentation*'
       - '.github/workflows/deploy-docs*'
+  pull_request:
 
 jobs:
   generate-matrix:
