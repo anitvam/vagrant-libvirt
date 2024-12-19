@@ -95,7 +95,6 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.6.6
         bundler-cache: true
     - name: Run tests
       run: |
