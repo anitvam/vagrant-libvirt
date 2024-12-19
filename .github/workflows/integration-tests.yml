@@ -26,7 +26,7 @@ jobs:
       NOKOGIRI_USE_SYSTEM_LIBRARIES: true
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
     - name: Set up libvirt for test generation
@@ -64,7 +64,7 @@ jobs:
       NOKOGIRI_USE_SYSTEM_LIBRARIES: true
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       with:
         fetch-depth: 0
     - name: Set up libvirt
