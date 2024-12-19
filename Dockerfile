@@ -2,7 +2,7 @@
 ARG VAGRANT_VERSION=2.3.0
 
 
-FROM ubuntu:jammy as base
+FROM ubuntu:noble as base
 
 RUN apt update \
     && apt install -y --no-install-recommends \
