@@ -30,7 +30,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'nokogiri', '1.14.5'
 
   s.add_development_dependency 'rake'
-  s.add_development_dependency "rspec-core", "3.12.3"
+  s.add_development_dependency "rspec-core", "3.13.2"
   s.add_development_dependency "rspec-expectations", "3.11.1"
   s.add_development_dependency "rspec-mocks", "3.12.7"
 end
