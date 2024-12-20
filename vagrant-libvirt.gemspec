@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.version       = VagrantPlugins::ProviderLibvirt.get_version
 
   s.add_runtime_dependency 'fog-libvirt', '0.6.0'
-  s.add_runtime_dependency 'fog-core', "2.4.0"
+  s.add_runtime_dependency 'fog-core', "2.5.0"
   s.add_runtime_dependency 'rexml'
   s.add_runtime_dependency 'xml-simple'
   s.add_runtime_dependency 'diffy'
