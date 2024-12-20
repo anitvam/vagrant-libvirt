@@ -32,5 +32,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rake'
   s.add_development_dependency "rspec-core", "3.12.3"
   s.add_development_dependency "rspec-expectations", "3.11.1"
-  s.add_development_dependency "rspec-mocks", "3.5"
+  s.add_development_dependency "rspec-mocks", "3.10.3"
 end
