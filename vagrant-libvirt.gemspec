@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency 'diffy'
 
   # Make sure to allow use of the same version as Vagrant by being less specific
-  s.add_runtime_dependency 'nokogiri', '1.6.8.1'
+  s.add_runtime_dependency 'nokogiri', '1.7.2'
 
   s.add_development_dependency 'rake'
   s.add_development_dependency "rspec-core", "3.5.4"
