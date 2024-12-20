@@ -4,5 +4,16 @@
     "github>DanySK/renovate-config"
   ],
   "forkProcessing": "enabled",
+  "customManagers": [
+  	{
+  		"customType": "regex",
+  		"fileMatch": ["^*.gemspec"],
+  		"matchStrings": [
+  			".*\\.add_(:?(?<depType>.*?)_)?dependency\\s*(['\"])(?<depName>[^'\"]+)(['\"])(\\s*,\\s*(?<currentValue>(['\"])[^'\"]+['\"](\\s*,\\s*['\"][^'\"]+['\"])?))?"
+  		],
+  		"datasourceTemplate": "rubygems",
+  		"versioningTemplate": "ruby"
+  	}
+  ],
   "assignees": ["anitvam"]
 }
