@@ -63,8 +63,8 @@ jobs:
 #        ref: master
     - name: Set up libvirt
       run: |
-        sudo apt-get update
-        sudo apt-get install libvirt-dev
+        apt-get update
+        apt-get install libvirt-dev
     - name: Ensure bundle uses https instead of insecure git
       run: |
         git config --global url."https://github.com/".insteadOf git://github.com/
@@ -118,8 +118,8 @@ jobs:
           fetch-depth: 0
       - name: Set up libvirt for test generation
         run: |
-          sudo apt-get update
-          sudo apt-get install -y \
+          apt-get update
+          apt-get install -y \
             libvirt-dev \
             libz-dev \
           ;
@@ -138,7 +138,7 @@ jobs:
   integration-tests:
     needs: generate-matrix
 
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
@@ -156,8 +156,8 @@ jobs:
           fetch-depth: 0
       - name: Set up libvirt
         run: |
-          sudo apt-get update
-          sudo apt-get install -y \
+          apt-get update
+          apt-get install -y \
             bridge-utils \
             dnsmasq-base \
             ebtables \
@@ -169,16 +169,16 @@ jobs:
             qemu-kvm \
             qemu-utils \
           ;
-          sudo apt-get install -y \
+          apt-get install -y \
             libvirt-dev \
             libz-dev \
           ;
           
           # start daemon
-          sudo systemctl start libvirtd
+          systemctl start libvirtd
           
           # add user to group
-          sudo usermod -a -G libvirt $USER
+          usermod -a -G libvirt $USER
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
