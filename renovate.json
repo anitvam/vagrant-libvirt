@@ -15,5 +15,6 @@
   		"versioningTemplate": "ruby"
   	}
   ],
-  "assignees": ["anitvam"]
+  "assignees": ["anitvam"],
+  "ignoreDeps": ["ruby"]
 }
