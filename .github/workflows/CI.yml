@@ -203,9 +203,9 @@ jobs:
           #!/bin/bash
           #
 
-          #export VAGRANT_LIBVIRT_VAGRANT_HOME=$HOME/.vagrant.d
+          export VAGRANT_LIBVIRT_VAGRANT_HOME=$HOME/.vagrant.d
 
-          #bundle exec rspec --color --fail-fast --tag acceptance -e '${{ matrix.test_name }}'
+          bundle exec rspec --color --fail-fast --tag acceptance -e '${{ matrix.test_name }}'
           EOF
           sudo chmod a+x script.bash
           
