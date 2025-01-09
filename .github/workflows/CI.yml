@@ -63,8 +63,8 @@ jobs:
 #        ref: master
     - name: Set up libvirt
       run: |
-        apt-get update
-        apt-get install libvirt-dev
+        sudo apt-get update
+        sudo apt-get install libvirt-dev
     - name: Ensure bundle uses https instead of insecure git
       run: |
         git config --global url."https://github.com/".insteadOf git://github.com/
@@ -102,7 +102,6 @@ jobs:
 #        path-to-lcov: ./coverage/lcov.info
 
   generate-matrix:
-    needs: unit-test
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
