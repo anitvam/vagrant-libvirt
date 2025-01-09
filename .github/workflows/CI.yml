@@ -169,7 +169,7 @@ jobs:
             qemu-kvm \
             qemu-utils \
           ;
-          apt-get install -y \
+          sudo apt-get install -y \
             libvirt-dev \
             libz-dev \
           ;
