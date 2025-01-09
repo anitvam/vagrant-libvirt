@@ -175,10 +175,10 @@ jobs:
           ;
           
           # start daemon
-          systemctl start libvirtd
+          sudo systemctl start libvirtd
           
           # add user to group
-          usermod -a -G libvirt $USER
+          sudo usermod -a -G libvirt $USER
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -206,7 +206,7 @@ jobs:
 
           bundle exec rspec --color --fail-fast --tag acceptance -e '${{ matrix.test_name }}'
           EOF
-          chmod a+x script.bash
+          sudo chmod a+x script.bash
 
           # run script under libvirt group
           sg libvirt -c ./script.bash
