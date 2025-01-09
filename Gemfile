@@ -7,6 +7,7 @@ group :test do
   # gem dependency because we expect to be installed within the
   # Vagrant environment itself using `vagrant plugin`.
   vagrant_version = ENV['VAGRANT_VERSION']
+  print 'vagrant version: ' + vagrant_version
   if !vagrant_version.nil? && !vagrant_version.empty?
     gem 'vagrant', :git => 'https://github.com/hashicorp/vagrant.git',
       :ref => vagrant_version
@@ -19,12 +20,14 @@ group :test do
     raise if vagrant_version.empty?
     vagrant_version = vagrant_version[1..-1] if vagrant_version && vagrant_version.start_with?('v')
     vagrant_gem_version = Gem::Version.new(vagrant_version)
+    print 'vagrant gem version: ' + vagrant_gem_version
   rescue
     # default to newer if unable to parse
     vagrant_gem_version = Gem::Version.new('2.2.8')
   end
 
   vagrant_spec_version = ENV['VAGRANT_SPEC_VERSION']
+  print 'vagrant spec version: ' + vagrant_spec_version
   if !vagrant_spec_version.nil? && !vagrant_spec_version.empty?
     gem 'vagrant-spec', :git => 'https://github.com/hashicorp/vagrant-spec', :ref => vagrant_spec_version
   elsif vagrant_gem_version <= Gem::Version.new('2.2.7')
