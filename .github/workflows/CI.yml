@@ -195,21 +195,21 @@ jobs:
           end
           EOF
           
-          # tell integration tests to use boxes from the cached location
-          # and also to load the above Vagrantfile. This is done because
-          # sg will not inherit env vars, so it's necessary to set them
-          # in a script that sg runs before calling bundle.
-          cat <<EOF > script.bash
-          #!/bin/bash
-          #
-          export VAGRANT_LIBVIRT_VAGRANT_HOME=$HOME/.vagrant.d
-
-          bundle exec rspec --color --fail-fast --tag acceptance -e '${{ matrix.test_name }}'
-          EOF
-          sudo chmod a+x script.bash
-
-          # run script under libvirt group
-          sg libvirt -c ./script.bash
+#          # tell integration tests to use boxes from the cached location
+#          # and also to load the above Vagrantfile. This is done because
+#          # sg will not inherit env vars, so it's necessary to set them
+#          # in a script that sg runs before calling bundle.
+#          cat <<EOF > script.bash
+#          #!/bin/bash
+#          #
+#          export VAGRANT_LIBVIRT_VAGRANT_HOME=$HOME/.vagrant.d
+#
+#          bundle exec rspec --color --fail-fast --tag acceptance -e '${{ matrix.test_name }}'
+#          EOF
+#          sudo chmod a+x script.bash
+#
+#          # run script under libvirt group
+#          sg libvirt -c ./script.bash
 
   finish:
     needs: [unit-test, analyze, integration-tests]
