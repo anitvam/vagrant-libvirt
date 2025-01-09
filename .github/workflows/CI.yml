@@ -208,6 +208,13 @@ jobs:
           #bundle exec rspec --color --fail-fast --tag acceptance -e '${{ matrix.test_name }}'
           EOF
           sudo chmod a+x script.bash
+          
+          # ==========
+          # [WORKAROUND 2025-01-10] ]Ubuntu bug asking for password using sg if the password was not previously defined:
+          # https://github.com/actions/runner-images/issues/9932#issuecomment-2145088186
+          sudo gpasswd -a runner libvirt
+          sudo gpasswd -r libvirt
+          # ==========
 
           # run script under libvirt group
           sg libvirt -c ./script.bash
