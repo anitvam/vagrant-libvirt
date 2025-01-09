@@ -135,7 +135,7 @@ bundle exec rspec --fail-fast --color --format documentation --tag acceptance
 **Note** rvm is used by the maintainers to help provide an environment to test
 against multiple ruby versions that align with the ones used by vagrant for
 their embedded ruby depending on the release. You can see what version is used
-by looking at the current [unit tests](.github/workflows/unit-tests.yml)
+by looking at the current [unit tests](.github/workflows/CI.yml)
 workflow. By default if you have rvm installed and enabled it this project looks
 to use ruby 3.1.2 and configures a separate gemset, both of which will be switched
 to each time you enter the project directory. It should be considered sufficient

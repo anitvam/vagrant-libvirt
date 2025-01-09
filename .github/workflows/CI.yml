@@ -102,6 +102,7 @@ jobs:
 #        path-to-lcov: ./coverage/lcov.info
 
   generate-matrix:
+    needs: unit-test
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.generate-matrix.outputs.matrix }}
