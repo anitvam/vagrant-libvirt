@@ -20,16 +20,18 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
   s.version       = VagrantPlugins::ProviderLibvirt.get_version
 
+  s.required_ruby_version = "3.3.6"
+
   s.add_runtime_dependency 'fog-libvirt', '0.13.2'
   s.add_runtime_dependency 'fog-core', "2.6.0"
-  s.add_runtime_dependency 'rexml'
-  s.add_runtime_dependency 'xml-simple'
-  s.add_runtime_dependency 'diffy'
+  s.add_runtime_dependency 'rexml', "3.4.0"
+  s.add_runtime_dependency 'xml-simple', "1.1.9"
+  s.add_runtime_dependency 'diffy', "3.4.3"
 
   # Make sure to allow use of the same version as Vagrant by being less specific
   s.add_runtime_dependency 'nokogiri', '1.18.1'
 
-  s.add_development_dependency 'rake'
+  s.add_development_dependency 'rake', "13.2.1"
   s.add_development_dependency "rspec-core", "3.13.2"
   s.add_development_dependency "rspec-expectations", "3.13.3"
   s.add_development_dependency "rspec-mocks", "3.13.2"
