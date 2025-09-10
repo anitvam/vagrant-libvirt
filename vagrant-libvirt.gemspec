@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
 
   s.add_runtime_dependency 'fog-libvirt', '0.13.2'
   s.add_runtime_dependency 'fog-core', "2.6.0"
-  s.add_runtime_dependency 'rexml', "3.4.2"
+  s.add_runtime_dependency 'rexml', "3.4.3"
   s.add_runtime_dependency 'xml-simple', "1.1.9"
   s.add_runtime_dependency 'diffy', "3.4.4"
 
