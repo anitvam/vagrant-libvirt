@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
   # Make sure to allow use of the same version as Vagrant by being less specific
   s.add_runtime_dependency 'nokogiri', '1.18.10'
 
-  s.add_development_dependency 'rake', "13.3.0"
+  s.add_development_dependency 'rake', "13.3.1"
   s.add_development_dependency "rspec-core", "3.13.6"
   s.add_development_dependency "rspec-expectations", "3.13.5"
   s.add_development_dependency "rspec-mocks", "3.13.6"
