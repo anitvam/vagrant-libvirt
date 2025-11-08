@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = "3.3.6"
 
-  s.add_runtime_dependency 'fog-libvirt', '0.13.2'
+  s.add_runtime_dependency 'fog-libvirt', '0.14.0'
   s.add_runtime_dependency 'fog-core', "2.6.0"
   s.add_runtime_dependency 'rexml', "3.4.4"
   s.add_runtime_dependency 'xml-simple', "1.1.9"
