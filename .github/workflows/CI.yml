@@ -32,7 +32,7 @@ jobs:
         language: [ 'ruby' ]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v4
         with:
@@ -51,7 +51,7 @@ jobs:
       VAGRANT_LIBVIRT_REQUIRE_SIMPLECOV: "true"
 
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
       with:
         fetch-depth: 0
 #    - name: Clone ruby-libvirt for ruby > 3.1 support
@@ -113,7 +113,7 @@ jobs:
       NOKOGIRI_USE_SYSTEM_LIBRARIES: true
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Set up libvirt for test generation
@@ -151,7 +151,7 @@ jobs:
       NOKOGIRI_USE_SYSTEM_LIBRARIES: true
 
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - name: Set up libvirt
