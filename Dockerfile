@@ -2,7 +2,7 @@
 ARG VAGRANT_VERSION=2.3.0
 
 
-FROM ubuntu:noble as base
+FROM ubuntu:resolute as base
 
 RUN apt update \
     && apt install -y --no-install-recommends \
